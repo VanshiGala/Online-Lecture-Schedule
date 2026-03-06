@@ -1,113 +1,153 @@
-Online Lecture Scheduling System - Ideamagix Assessment
+Online Lecture Scheduling System
 
-MERN Stack Internship Assessment | Ideamagix Internship Assessment
+MERN Stack | Ideamagix Internship Assessment
 
-Live Demo:
+🔗 Live Demo
 
-Frontend:https://online-lecture-schedule.vercel.app/
+Frontend:
+ [https://online-lecture-schedule.vercel.app](https://online-lecture-schedule.vercel.app)
 
-Backend:https://online-lecture-schedule-ppbx.onrender.com
+Backend:
+ [https://online-lecture-schedule-ppbx.onrender.com](https://online-lecture-schedule-ppbx.onrender.com)
 
-Test Credentials:
+---
 
-Admin Login:
+## Test Credentials
 
-Email: admin@gmail.com
+### Admin Login
+
+```
+Email: admin@test.com
 Password: admin123
+```
 
+### Instructor Login
 
-Instructor Login:
+```
+Email: instructor@test.com
+Password: instructor123
+```
 
-Email Format: name@ideamagix.in
+---
 
-Password Format: Name of instructor with first letter of instructor name in capital + @123
+##  Features Implemented
 
+###  Authentication Module
 
-Features Implemented:
+* Login page with responsive UI
+* Role-based authentication (Admin / Instructor)
+* MongoDB database authentication
+* JWT token-based session management
+* Logout functionality clears token storage
 
--Authentication Module:
+---
 
-Login page with responsive UI
-Role-based authentication (Admin / Instructor)
-MongoDB database authentication
-JWT token-based session management
-Logout functionality clears token storage
--JWT Authentication (Mandatory):
+###  JWT Authentication (Mandatory)
 
-JSON Web Token generated after login
-Token expiry configured (24 hours recommended)
-Protected routes using auth middleware
-Token stored in browser localStorage
--Admin Dashboard: Overview Statistics
+* JSON Web Token generated after login
+* Token expiry configured (24 hours recommended)
+* Protected routes using auth middleware
+* Token stored in browser localStorage
 
-Total Courses Count
-Total Instructors Count
-Total Scheduled Lectures Count
--Data Tables Included
+---
 
-Course List with Thumbnail Image
-Instructor List
-Lecture Scheduling Mapping
--Course Management
+###  Admin Dashboard
 
-Add new courses
-Course name
-Course level (Beginner / Intermediate / Advanced)
-Course description
-Course cover image
--Lecture Scheduling Module
+#### Overview Statistics
+
+* Total Courses Count
+* Total Instructors Count
+* Total Scheduled Lectures Count
+
+#### Data Tables Included
+
+* Course List with Thumbnail Image
+* Instructor List
+* Lecture Scheduling Mapping
+
+---
+
+### Course Management
+
+* Add new courses
+* Course name
+* Course level (Beginner / Intermediate / Advanced)
+* Course description
+* Course cover image
+
+###  Lecture Scheduling Module
 
 Admin can schedule lectures by assigning:
 
-Course
-Instructor
-Batch name
-Lecture date
--Conflict Prevention Rule
+* Course
+* Instructor
+* Batch name
+* Lecture date
+
+###  Conflict Prevention Rule
 
 System prevents:
 
-Same instructor being assigned multiple lectures on the same date.
+* Same instructor being assigned multiple lectures on the same date.
+
 Backend validation implemented.
 
--Instructor Panel
+---
+
+### Instructor Panel
 
 Instructor can:
 
-View assigned lectures
-Check schedule details
--Lecture information includes:
+* View assigned lectures
+* Check schedule details
 
-Course name
-Course image
-Batch information
-Lecture date
-Data Search & Display
+Lecture information includes:
+
+* Course name
+* Course image
+* Batch information
+* Lecture date
+
+---
+
+###  Data Search & Display
+
 Implemented structured data retrieval.
 
 Supported Features:
 
-MongoDB query filtering
-Population of relational references
-Optional chaining rendering safety
-Technology Stack
-Layer	Technology
-Frontend	React.js (Vite), Tailwind CSS
-Backend	Node.js, Express.js
-Database	MongoDB Atlas
-Authentication	JWT, bcryptjs
-Media Storage	Cloudinary
-HTTP Client	Axios
-Notifications	React Hot Toast
-Deployment	Vercel + Render
-📂 Project Structure
+* MongoDB query filtering
+* Population of relational references
+* Optional chaining rendering safety
 
+---
+
+##  Technology Stack
+
+| Layer          | Technology                    |
+| -------------- | ----------------------------- |
+| Frontend       | React.js (Vite), Tailwind CSS |
+| Backend        | Node.js, Express.js           |
+| Database       | MongoDB Atlas                 |
+| Authentication | JWT, bcryptjs                 |
+| Media Storage  | Cloudinary                    |
+| HTTP Client    | Axios                         |
+| Notifications  | React Hot Toast               |
+| Deployment     | Vercel + Render               |
+
+---
+
+## 📂 Project Structure
+
+```
 online-lecture-scheduling/
 │
 ├── backend/
 │
 │   ├── config/
-│   │   └── dbConfig.js
+│   │   ├── dbConfig.js
+│   │   ├── cloudinary.js
+│   │   └── env.js
 │   │
 │   ├── controllers/
 │   │   ├── authController.js
@@ -116,12 +156,14 @@ online-lecture-scheduling/
 │   │   └── userController.js
 │   │
 │   ├── middleware/
-│   │   └── authMiddleware.js
+│   │   ├── authMiddleware.js
+│   │   ├── errorMiddleware.js
+│   │   └── validateMiddleware.js
 │   │
 │   ├── models/
+│   │   ├── User.js
 │   │   ├── Course.js
-│   │   ├── Lecture.js
-│   │   └── User.js
+│   │   └── Lecture.js
 │   │
 │   ├── routes/
 │   │   ├── authRoutes.js
@@ -129,77 +171,155 @@ online-lecture-scheduling/
 │   │   ├── lectureRoutes.js
 │   │   └── userRoutes.js
 │   │
-│   └── app.js
+│   ├── validations/
+│   │   └── schema.js
+│   │
+│   ├── seed/
+│   │   └── adminSeed.js
+│   │
+│   ├── utils/
+│   │   ├── jwtUtils.js
+│   │   ├── responseHandler.js
+│   │   └── logger.js
+│   │
+│   ├── app.js
+│   ├── server.js
+│   └── package.json
 │
 ├── frontend/
 │
 │   ├── src/
 │   │
 │   ├── api/
-│   │   └── axios.jsx
+│   │   └── axios.js
+│   │
+│   ├── assets/
+│   │   ├── images/
+│   │   └── icons/
 │   │
 │   ├── components/
-│   │   └── Navbar.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Sidebar.jsx
+│   │   ├── StatCard.jsx
+│   │   ├── Table.jsx
+│   │   ├── Loader.jsx
+│   │   └── ToastProvider.jsx
 │   │
 │   ├── pages/
 │   │   ├── Login.jsx
 │   │   ├── AdminDashboard.jsx
 │   │   ├── InstructorPanel.jsx
 │   │   ├── ScheduleLecture.jsx
-│   │   ├── AddInstructor.jsx
-│   │   └── Courses.jsx
+│   │   ├── CourseManagement.jsx
+│   │   └── NotFound.jsx
+│   │
+│   ├── hooks/
+│   │   ├── useAuth.js
+│   │   └── useFetch.js
+│   │
+│   ├── context/
+│   │   └── AuthContext.jsx
+│   │
+│   ├── router/
+│   │   └── AppRouter.jsx
 │   │
 │   ├── App.jsx
 │   └── main.jsx
 │
-└── README.md
+├── .env
+├── README.md
+└── package.json
+```
 
-#Local Setup Instructions
+---
 
-Prerequisites:
+##  Local Setup Instructions
 
-Node.js v18+
-MongoDB Atlas account
-Cloudinary account
-#Backend Setup
+### Prerequisites
 
-cd backend npm install
+* Node.js v18+
+* MongoDB Atlas account
+* Cloudinary account
 
-Create .env file:
+---
 
-MONGO_URI=your_mongodb_uri JWT_SECRET=your_secret_key PORT=8000 CLIENT_URL=http://localhost:5173
+### Backend Setup
 
-Start backend: npm run dev
+```bash
+cd backend
+npm install
+```
 
-Backend URL: http://localhost:8000
+Create `.env` file:
 
-#Frontend Setup
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+PORT=8000
+CLIENT_URL=http://localhost:5173
+```
 
-cd frontend npm install
+Start backend:
 
-Create .env file:
+```bash
+npm run dev
+```
 
-BASE_URL=http://localhost:8000/api
+Backend URL:
+
+```
+http://localhost:8000
+```
+
+---
+
+### Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+Create `.env` file:
+
+```
+VITE_API_URL=http://localhost:8000/api
+```
 
 Start frontend:
 
+```bash
 npm run dev
+```
 
-Frontend URL: http://localhost:5173
+Frontend URL:
 
--Deployment
+```
+http://localhost:5173
+```
 
-Service	Platform
-Frontend	Vercel
-Backend	Render
-Database	MongoDB Atlas
-Images	Disk
-Important Notes
+---
 
-Backend may take 30–60 seconds to wake up (Render free tier cold start).
-JWT authentication is used for security.
-CORS policy configured for frontend domain.
-The application is designed as a desktop dashboard system and is less optimized for mobile responsiveness.
--Submitted By
+##  Deployment
 
-Vanshi Gala Ideamagix Internship Assessment Project
+| Service  | Platform      |
+| -------- | ------------- |
+| Frontend | Vercel        |
+| Backend  | Render        |
+| Database | MongoDB Atlas |
+| Images   | Cloudinary    |
+
+---
+
+##  Important Notes
+
+* Backend may take 30–60 seconds to wake up (Render free tier cold start).
+* JWT authentication is used for security.
+* CORS policy configured for frontend domain.
+
+---
+
+## Submitted By
+
+Vanshi Gala
+Ideamagix Internship Assessment Project
