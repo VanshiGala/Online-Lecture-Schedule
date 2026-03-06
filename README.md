@@ -5,10 +5,10 @@ MERN Stack | Ideamagix Internship Assessment
 🔗 Live Demo
 
 Frontend:
- [https://online-lecture-schedule.vercel.app](https://online-lecture-schedule.vercel.app)
+ https://online-lecture-schedule.vercel.app/
 
 Backend:
- [https://online-lecture-schedule-ppbx.onrender.com](https://online-lecture-schedule-ppbx.onrender.com)
+ https://online-lecture-schedule-ppbx.onrender.com
 
 ---
 
@@ -17,15 +17,15 @@ Backend:
 ### Admin Login
 
 ```
-Email: admin@test.com
+Email: admin@gmail.com
 Password: admin123
 ```
 
 ### Instructor Login
 
 ```
-Email: instructor@test.com
-Password: instructor123
+Email: name of the instructor@ideamagix.in
+Password: name of the instructor with first letter capital + @123
 ```
 
 ---
@@ -130,7 +130,7 @@ Supported Features:
 | Backend        | Node.js, Express.js           |
 | Database       | MongoDB Atlas                 |
 | Authentication | JWT, bcryptjs                 |
-| Media Storage  | Cloudinary                    |
+| Media Storage  | Disk                          |
 | HTTP Client    | Axios                         |
 | Notifications  | React Hot Toast               |
 | Deployment     | Vercel + Render               |
@@ -146,8 +146,6 @@ online-lecture-scheduling/
 │
 │   ├── config/
 │   │   ├── dbConfig.js
-│   │   ├── cloudinary.js
-│   │   └── env.js
 │   │
 │   ├── controllers/
 │   │   ├── authController.js
@@ -157,8 +155,6 @@ online-lecture-scheduling/
 │   │
 │   ├── middleware/
 │   │   ├── authMiddleware.js
-│   │   ├── errorMiddleware.js
-│   │   └── validateMiddleware.js
 │   │
 │   ├── models/
 │   │   ├── User.js
@@ -171,16 +167,11 @@ online-lecture-scheduling/
 │   │   ├── lectureRoutes.js
 │   │   └── userRoutes.js
 │   │
-│   ├── validations/
-│   │   └── schema.js
 │   │
 │   ├── seed/
-│   │   └── adminSeed.js
+│   │   └── seedAdmin.js
+|   |   |__ seedCourse.js
 │   │
-│   ├── utils/
-│   │   ├── jwtUtils.js
-│   │   ├── responseHandler.js
-│   │   └── logger.js
 │   │
 │   ├── app.js
 │   ├── server.js
@@ -199,29 +190,14 @@ online-lecture-scheduling/
 │   │
 │   ├── components/
 │   │   ├── Navbar.jsx
-│   │   ├── Sidebar.jsx
-│   │   ├── StatCard.jsx
-│   │   ├── Table.jsx
-│   │   ├── Loader.jsx
-│   │   └── ToastProvider.jsx
 │   │
 │   ├── pages/
 │   │   ├── Login.jsx
 │   │   ├── AdminDashboard.jsx
 │   │   ├── InstructorPanel.jsx
 │   │   ├── ScheduleLecture.jsx
-│   │   ├── CourseManagement.jsx
-│   │   └── NotFound.jsx
+│   │   ├── Course.jsx
 │   │
-│   ├── hooks/
-│   │   ├── useAuth.js
-│   │   └── useFetch.js
-│   │
-│   ├── context/
-│   │   └── AuthContext.jsx
-│   │
-│   ├── router/
-│   │   └── AppRouter.jsx
 │   │
 │   ├── App.jsx
 │   └── main.jsx
@@ -239,7 +215,6 @@ online-lecture-scheduling/
 
 * Node.js v18+
 * MongoDB Atlas account
-* Cloudinary account
 
 ---
 
@@ -307,7 +282,7 @@ http://localhost:5173
 | Frontend | Vercel        |
 | Backend  | Render        |
 | Database | MongoDB Atlas |
-| Images   | Cloudinary    |
+| Images   | Disk          |
 
 ---
 
