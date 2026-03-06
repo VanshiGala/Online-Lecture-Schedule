@@ -1,24 +1,7 @@
-// import axios from "axios"
-
-// const api = axios.create({
-// baseURL:"http://localhost:8000/api"
-// })
-
-// api.interceptors.request.use(config=>{
-// const token = localStorage.getItem("token")
-
-// if(token){
-// config.headers.Authorization=`Bearer ${token}`
-// }
-
-// })
-
-// export default api
-
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api"
+  baseURL: "https://online-lecture-schedule-ppbx.onrender.com/api"
 });
 
 api.interceptors.request.use(
