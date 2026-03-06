@@ -30,7 +30,6 @@ function ScheduleLecture() {
     setLoading(true);
     try {
       await api.post("/lectures/schedule", { courseId, instructorId, date,batch });
-      window.location.reload();
       toast.success("Lecture Scheduled");
     } catch(err) {
       console.log(err.response.data)

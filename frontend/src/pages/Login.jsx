@@ -25,31 +25,39 @@ function Login() {
       toast.error("Invalid credentials");
     }
   };
-
+//toast.success("Toast Working Test");
   return (
-    <div className="flex items-center justify-center min-h-screen">
-      <div className="bg-white p-8 rounded shadow-md w-96">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-
-        <input
-          placeholder="Email"
-          className="border w-full p-2 mb-3 rounded"
-          onChange={(e) => setEmail(e.target.value)}
-        />
-
-        <input
-          type="password"
-          placeholder="Password"
-          className="border w-full p-2 mb-4 rounded"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-
-        <button
-          onClick={submit}
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-        >
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="bg-white w-96 p-8 rounded-2xl shadow-xl">
+        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">
           Login
-        </button>
+        </h2>
+
+        <div className="space-y-4">
+          <div>
+            <input
+              placeholder="Email"
+              className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              className="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button
+            onClick={submit}
+            className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold"
+          >
+            Login
+          </button>
+        </div>
       </div>
     </div>
   );
