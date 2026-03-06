@@ -316,10 +316,12 @@ http://localhost:5173
 * Backend may take 30–60 seconds to wake up (Render free tier cold start).
 * JWT authentication is used for security.
 * CORS policy configured for frontend domain.
+* This is desktop application, might not be mobile responsive.
 
 ---
 
 ## Submitted By
 
 Vanshi Gala
+
 Ideamagix Internship Assessment Project
